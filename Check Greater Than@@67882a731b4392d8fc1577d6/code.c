@@ -20,6 +20,5 @@ int main() {
   } else {
     printf("False\n"); // Print "False" otherwise
   }
-
-  return 0;
+ return 0;
 }
