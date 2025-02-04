@@ -7,7 +7,7 @@ int main() {
     if (num1>0 || num2>0) {
         printf("True\n");
     } else {
-        printf("True");
+        printf("True\n");
     }
 
     
