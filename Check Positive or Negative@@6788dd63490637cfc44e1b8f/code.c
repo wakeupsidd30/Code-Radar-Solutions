@@ -9,6 +9,6 @@ int main() {
         printf("Negative")
     }
     
-    printf("%s", welcome());
+   
     return 0;
 }
