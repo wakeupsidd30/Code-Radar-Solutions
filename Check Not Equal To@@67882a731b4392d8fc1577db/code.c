@@ -7,7 +7,7 @@ int main() {
     if (num1!=num2) {
         printf("False\n");
     } else{
-        printf("False");
+        printf("True");
     }
     
     return 0;
