@@ -9,15 +9,14 @@ int main() {
     switch (op) {
         case '+': 
             printf("%d\n", a + b); 
-            break; // Essential to exit the 'case +' block
+            break; 
 
         case '-': 
             printf("%d\n", a - b); 
-            break; // Essential to exit the 'case -' block
-
+            break; 
         case '*': 
             printf("%d\n", a * b); 
-            break; // Essential to exit the 'case *' block
+            break; 
 
         case '/':
             if (b == 0) {
@@ -25,10 +24,10 @@ int main() {
             } else {
                 printf("%d\n", a / b);
             }
-            break; // Essential to exit the 'case /' block
+            break;
 
         default: 
-            printf("Error: Invalid operator\n");
+            printf("Error");
     }
 
     return 0;
