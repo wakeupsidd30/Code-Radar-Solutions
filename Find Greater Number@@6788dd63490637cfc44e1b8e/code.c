@@ -7,9 +7,7 @@ int main() {
         printf("%d is greater then %d\n", num1, num2);
     } else if {
         printf("%d is greater than %d\n", num2, num1);
-    } else {
-        printf("%d is equal to %d\n", num1, num2);
-    }
+    } 
  
     return 0;
 }
