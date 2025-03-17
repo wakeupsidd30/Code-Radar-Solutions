@@ -1,19 +1,14 @@
 #include <stdio.h>
 
 int main() {
-    int N;
-    
-    // Taking input from user
-    printf("Enter the number of rows: ");
-    scanf("%d", &N);
+  int n;
+  scanf("%d", &n);
 
-    // Loop to print the pattern
-    for (int i = N; i > 0; i--) {  // Outer loop controls rows
-        for (int j = 0; j < i; j++) {  // Inner loop controls stars
-            printf("*");
-        }
-        printf("\n"); // Move to the next line
+  for (int i = n; i >= 1; i--) {
+    for (int j = 1; j <= i; j++) {
+      printf("*");
     }
-
-    return 0;
+    printf("\n");
+  }
+  return 0;
 }
