@@ -21,25 +21,3 @@ void caesarCipher(char *message, int shift) {
     }
 }
 
-int main() {
-    char message[100];
-    int shift;
-
-    // Input the message and shift value
-    printf("Enter the message to encrypt: ");
-    fgets(message, sizeof(message), stdin);
-    
-    // Remove newline character from fgets input
-    message[strcspn(message, "\n")] = 0;
-
-    printf("Enter the shift value: ");
-    scanf("%d", &shift);
-
-    // Encrypt the message
-    caesarCipher(message, shift);
-
-    // Output the encrypted message
-    printf("Encrypted Message: %s\n", message);
-
-    return 0;
-}
