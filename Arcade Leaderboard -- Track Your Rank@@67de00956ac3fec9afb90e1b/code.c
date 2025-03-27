@@ -1,46 +1,38 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-// Function to remove duplicates from the ranked array
-int removeDuplicates(int ranked[], int n, int uniqueRanks[]) {
-    int j = 0;
-    for (int i = 0; i < n; i++) {
-        if (i == 0 || ranked[i] != ranked[i - 1]) {
-            uniqueRanks[j++] = ranked[i];
-        }
-    }
-    return j; // New size of uniqueRanks
+int compare(const void *a, const void *b) {
+    return (*(int *)b - *(int *)a); // Sort in descending order
 }
 
-// Function to find player's rank after each game
-void climbingLeaderboard(int ranked[], int n, int player[], int m) {
-    int uniqueRanks[n];  
-    int newSize = removeDuplicates(ranked, n, uniqueRanks);
-    
-    int result[m];  
-    int index = newSize - 1;  // Start from the lowest rank
+void trackPlayerRanks(int leaderboard[], int leaderboardSize, int alice_scores[], int aliceSize, int ranks[]) {
+    // Step 1: Create an array for unique scores
+    int *uniqueScores = (int *)malloc(leaderboardSize * sizeof(int));
+    int uniqueCount = 0;
 
-    for (int i = 0; i < m; i++) {
-        while (index >= 0 && player[i] >= uniqueRanks[index]) {
-            index--;  // Move up the rank if the player's score is higher
+    // Step 2: Extract unique scores
+    for (int i = 0; i < leaderboardSize; i++) {
+        if (i == 0 || leaderboard[i] != leaderboard[i - 1]) {
+            uniqueScores[uniqueCount++] = leaderboard[i];
         }
-        result[i] = index + 2;  // Rank is (index + 2)
     }
 
-    // Print results
-    for (int i = 0; i < m; i++) {
-        printf("%d\n", result[i]);
+    // Step 3: Calculate ranks for Alice's scores
+    for (int i = 0; i < aliceSize; i++) {
+        // Binary search for the rank
+        int low = 0, high = uniqueCount - 1;
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+            if (uniqueScores[mid] > alice_scores[i]) {
+                low = mid + 1;
+            } else {
+                high = mid - 1;
+            }
+        }
+        // Rank is the number of scores greater than Alice's score + 1
+        ranks[i] = low + 1;
     }
-}
 
-// Driver Code
-int main() {
-    int ranked[] = {100, 90, 90, 80, 75, 60};
-    int player[] = {50, 65, 77, 90, 102};
-    
-    int n = sizeof(ranked) / sizeof(ranked[0]);
-    int m = sizeof(player) / sizeof(player[0]);
-
-    climbingLeaderboard(ranked, n, player, m);
-
-    return 0;
+    // Free allocated memory
+    free(uniqueScores);
 }
