@@ -6,7 +6,7 @@ int compare(const void *a, const void *b) {
     return (*(int *)a - *(int *)b);
 }
 
-void balloon_deflation_game(int balloons[], int n) {
+void deflateBalloons(int balloons[], int n) {
     // Sort the balloons array
     qsort(balloons, n, sizeof(int), compare);
 
