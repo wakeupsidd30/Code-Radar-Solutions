@@ -1,8 +1,8 @@
 #include <stdio.h>
 
-int incrementToNextPrime(int digit) {
+int incrementToNextPrime(int N) {
     // Return the next prime digit for the given digit
-    switch (digit) {
+    switch (N) {
         case 0: return 2;
         case 1: return 2;
         case 2: return 2;
@@ -13,7 +13,7 @@ int incrementToNextPrime(int digit) {
         case 7: return 7;
         case 8: return 2; // Wrap around
         case 9: return 2; // Wrap around
-        default: return digit; // Should not reach here
+        default: return N; // Should not reach here
     }
 }
 
