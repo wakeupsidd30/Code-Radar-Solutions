@@ -1,5 +1,5 @@
-#include <stdio.h>
 
+int incrementToNextPrime(int N);
 int incrementToNextPrime(int N) {
     // Return the next prime digit for the given digit
     switch (N) {
