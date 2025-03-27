@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int nextPrimeDigit(int digit) {
+int incrementToNextPrime(int digit) {
     // Return the next prime digit for the given digit
     switch (digit) {
         case 0: return 2;
