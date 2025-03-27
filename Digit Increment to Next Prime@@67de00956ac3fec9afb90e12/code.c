@@ -32,18 +32,4 @@ int incrementToNextPrime(int N) {
     return result;
 }
 
-int main() {
-    int N;
 
-    // Input the integer N
-    printf("Enter an integer N: ");
-    scanf("%d", &N);
-
-    // Get the resulting number after incrementing to next prime digits
-    int result = incrementToNextPrime(N);
-
-    // Output the resulting number
-    printf("Resulting Number: %d\n", result);
-
-    return 0;
-}
