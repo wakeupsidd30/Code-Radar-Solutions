@@ -26,12 +26,3 @@ void balloon_deflation_game(int balloons[], int n) {
     }
 }
 
-int main() {
-    int balloons[] = {5, 4, 6, 3};
-    int n = sizeof(balloons) / sizeof(balloons[0]);
-
-    printf("Number of balloons with air at the beginning of each round:\n");
-    balloon_deflation_game(balloons, n);
-
-    return 0;
-}
