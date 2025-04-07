@@ -9,7 +9,7 @@ int main() {
         scanf("%d", &arr[i]);
     }
 
-    int isSorted = 1; // Assume it's sorted
+    int isSorted = 1; 
 
     for (int i = 1; i < N; i++) {
         if (arr[i] < arr[i - 1]) {
